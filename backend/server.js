@@ -44,7 +44,7 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
+app.get("/info", (req, res) => {
   return res.send("Verification des routes");
 });
 
