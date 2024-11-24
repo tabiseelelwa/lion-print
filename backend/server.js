@@ -45,7 +45,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
-  res.send("Verification des routes");
+  return res.send("Verification des routes");
 });
 
 // CONNEXION A LA BASE DE DONNEES
