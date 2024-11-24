@@ -14,13 +14,13 @@ app.use(express.static("public"));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-app.use(
-  cors({
-    origin: ["https://lion-print.net"],
-    methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: ["https://lion-print.net"],
+//     methods: ["POST", "GET", "PUT", "DELETE"],
+//     credentials: true,
+//   })
+// );
 
 const options = {
   host: "localhost",
@@ -43,6 +43,10 @@ app.use(
     },
   })
 );
+
+app.get("/", (req, res) => {
+  res.send("Verification des routes");
+});
 
 // CONNEXION A LA BASE DE DONNEES
 const Bdd = mysql.createConnection(options);
